@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NFCTestApp</string>
+    <string name="READ">Read</string>
+    <string name="WRITE">Write</string>
 </resources>
