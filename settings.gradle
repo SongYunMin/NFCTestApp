@@ -1,0 +1,2 @@
+rootProject.name='NFCTestApp'
+include ':app'
