@@ -3,7 +3,7 @@
     package="com.example.nfctestapp">
 
     <uses-permission android:name="android.permission.NFC"/>
-    <uses-sdk android:minSdkVersion="10"/>
+    <uses-sdk android:minSdkVersion="19"/>
     <uses-feature android:name="android.hardware.nfc" android:required="true"/>
 
 
@@ -24,6 +24,20 @@
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
+
+        <service android:name=".CardService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <!-- Intent filter indicating that we support card emulation. -->
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <!-- Required XML configuration file, listing the AIDs that we are emulating cards
+                 for. This defines what protocols our card emulation service supports. -->
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@layout/aid_list"/>
+        </service>
     </application>
 
 </manifest>

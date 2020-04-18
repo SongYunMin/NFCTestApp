@@ -6,15 +6,16 @@
     android:layout_gravity="center"
     >
 
-    <Button
-        android:id="@+id/readbutton"
+    <TextView
+        android:id="@+id/_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+    />
     <Button
-        android:id="@+id/writebutton"
+        android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="UPDATE"
         />
 
 
